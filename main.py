@@ -25,14 +25,6 @@ async def on_ready():
         print(f"discord login success as {bot.user}")
     except Exception as e:
         print(f"명령어 동기화 실패: {e}")
-        
-@bot.tree.command(name="일반모드", description="봇을 일반 모드로 전환합니다.")
-async def regular_mode(interaction: discord.Interaction):
-    if interaction.user.id != "1006796102982455379":
-        await interaction.response.send_message("이 명령어를 사용할 권한이 없습니다.")
-        return
-    client.load_instruction()
-    await interaction.response.send_message("봇이 일반 모드로 전환되었습니다.")
 
 @bot.event
 async def on_message(message):
@@ -83,4 +75,5 @@ except discord.errors.LoginFailure:
     print("Invalid Discord token provided.")
 except Exception as e:
     print("Unexpected error occurred:", e)
+
 
