@@ -14,7 +14,7 @@ intent.emojis = True
 intent.message_content = True
 intent.messages = True
 bot = commands.Bot(command_prefix="!", intents=intent)
-client = Gemini() #gemini.py에서 가져온 함수
+client = Gemini()
 recorder = initiate_recorder()
 trigger_word = "::"
 
@@ -75,5 +75,6 @@ except discord.errors.LoginFailure:
     print("Invalid Discord token provided.")
 except Exception as e:
     print("Unexpected error occurred:", e)
+
 
 
